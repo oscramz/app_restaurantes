@@ -1,0 +1,7 @@
+{
+    "solargraph.formatting": true,
+    "solargraph.useBundler": true,
+    "solargraph.diagnostics": true,
+    "solargraph.commandPath": "/home/oskode/.rbenv/shims/solargraph",
+    "solargraph.autoformat": true
+}
