@@ -1,0 +1,13 @@
+<h2>Mostrar el detalle de un tipo de comida</h2>
+<h2>Detalles tipo de comida</h2>
+
+<h3>id: <%= @tipo_comida.id %> </h3>
+<h1> <%= @tipo_comida.tipo %> </h1>
+
+<% @tipo_comida.restaurantes.each do |restaurante| %>
+    <p> <%= restaurante.nombre%> </p>
+<% end %>
+
+<%= link_to tipos_comidas_path do %>
+    Volver
+<% end %>
