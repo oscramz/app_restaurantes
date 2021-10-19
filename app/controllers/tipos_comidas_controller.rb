@@ -33,6 +33,19 @@ class  TiposComidasController < ApplicationController
         redirect_to tipos_comidas_path
     end
 
+    def actualizar
+        # encontrar el registro que quiero editar en la DB
+        @tipo_comida = TipoComida.find(params[:id])
+        datos_tipo_comida = params.require(:tipo_comida).permit(:tipo)
+        # actualizar los campos necesarios
+        @tipo_comida.tipo = datos_tipo_comida[:tipo]
+        # guardar los cambios en la DB
+        @tipo_comida.save
+        # redireccionar a la lista de todos los tipos de comida
+        redirect_to tipos_comidas_path
+    end
+
+
     #delete tipos_comidas/:id
     def eliminar
         #pasos para eliminar un registro
