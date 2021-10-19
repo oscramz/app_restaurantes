@@ -21,11 +21,11 @@ class  TiposComidasController < ApplicationController
     #get / tipos_comidas/:id/editar
     def editar
         #mostrar formulario con los datos de un registro para editarlos
+        @tipo_comida = TipoComida.find(params[:id])
     end
 
     #post /tipos_comidas
     def guardar
-        byebug
         #guardar todo lo que llegue del formulario en la DB
         datos_tipo_comida = params.require(:tipo_comida).permit(:tipo)
         nuevo_tipo = TipoComida.new(datos_tipo_comida)
@@ -33,11 +33,11 @@ class  TiposComidasController < ApplicationController
         redirect_to tipos_comidas_path
     end
 
-    #DELETE tipos_comidas/:id
+    #delete tipos_comidas/:id
     def eliminar
         #pasos para eliminar un registro
         #1. buscar el registro por ID
-        tipo = TipoCOmida.find(params[:id])
+        tipo = TipoComida.find(params[:id])
         #2 Intentar eliminar el registro
         tipo.destroy
         redirect_to tipos_comidas_path
