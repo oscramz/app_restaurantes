@@ -8,7 +8,7 @@ class  TiposComidasController < ApplicationController
 
     #get /tipos_comidas/nuevo
     def crear
-        @nuevo_tipo_comida = TipoComida.new
+        @tipo_comida = TipoComida.new
     end
 
     #get /tipos_comidas/:id
