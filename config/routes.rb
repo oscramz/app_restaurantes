@@ -9,4 +9,8 @@ Rails.application.routes.draw do
   put    'tipos_comidas/:id',        to: 'tipos_comidas#actualizar'
   patch  'tipos_comidas/:id',        to: 'tipos_comidas#actualizar'
   delete 'tipos_comidas/:id',        to: 'tipos_comidas#eliminar'
+
+  # rutas tipos puntajes
+  get    'tipos_puntajes',           to: 'tipos_puntajes#listar',   as: 'tipos_puntajes'
+  
 end

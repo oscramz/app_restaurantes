@@ -1,0 +1,29 @@
+<h1>Lista los tipos de Puntajes </h1>
+<br>
+# <%= link_to @titulo_link, nuevo_tipo_comida_path %>
+<br>
+<table>
+    <tr>
+        <th>id</th>
+        <th>tipo</th>
+        <th>acciones</th>
+    </tr>
+    <% @todos_los_puntajes.each do |tipo_puntaje| %>
+        <tr>
+            <td> <%= tipo_puntaje.id %> </td>
+            <td>
+                <%= link_to tipos_puntajes_path(tipo_puntaje) do %>
+                    <%= tipo_puntaje.tipo %>
+                <% end %>
+            </td>
+            <td>
+                <%= link_to tipos_puntajes_path(tipo_puntaje), method: :delete, data: { confirm: '¿Está seguro que quiere eliminar el registro?' } do %>
+                    Borrar
+                <% end %>
+                <%= link_to editar_tipos_puntajes_path(tipo_puntaje) do %>
+                    Editar
+                <% end %>
+            </td>
+        </tr>
+    <% end %>
+</table>
