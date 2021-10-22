@@ -1,2 +1,3 @@
 class TipoPuntaje < ApplicationRecord
+    
 end

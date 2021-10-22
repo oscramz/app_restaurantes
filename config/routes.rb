@@ -11,6 +11,14 @@ Rails.application.routes.draw do
   delete 'tipos_comidas/:id',        to: 'tipos_comidas#eliminar'
 
   # rutas tipos puntajes
-  get    'tipos_puntajes',           to: 'tipos_puntajes#listar',   as: 'tipos_puntajes'
+  get    'puntajes',                 to: 'puntajes#listar',        as: 'puntajes'
+  get    'puntajes/nuevo',           to: 'puntajes#crear',         as: 'nuevo_puntaje'
+  get    'puntajes/:id',             to: 'puntajes#mostrar',       as: 'puntaje'
+  get    'puntajes/:id/editar',      to: 'puntajes#editar',        as: 'editar_puntaje'
+
+  post   'puntajes',                 to: 'puntajes#guardar'
+  put    'puntajes/:id',             to: 'puntajes#actualizar'
+  patch  'puntajes/:id',             to: 'puntajes#actualizar'
+  delete 'puntajes/:id',             to: 'puntajes#eliminar'
   
 end

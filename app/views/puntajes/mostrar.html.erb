@@ -1,0 +1,13 @@
+<h2>Mostrar el detalle de los puntajes</h2>
+<h2>Detalles tipos de puntaje</h2>
+
+<h3>id: <%= @puntaje.id %></h3>
+<h1><%= @puntaje.tipo %></h1>
+
+<%= @puntaje.each do |puntaje| %>
+    <p><%= @puntaje.nombre %></p>
+<% end %>
+
+<%= link_to nuevo_puntaje_path do %>
+Volver
+<% end %>
