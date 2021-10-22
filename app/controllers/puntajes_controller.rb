@@ -7,7 +7,7 @@ class PuntajesController < ApplicationController
 
     #get /nuevo_puntaje
     def crear
-        @puntaje = Puntaje.new
+        @puntaje = TipoPuntaje.new
     end
 
     #get /:id
