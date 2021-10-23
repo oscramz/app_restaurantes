@@ -7,6 +7,10 @@ class UsuariosController < ApplicationController
     def mostrar
         @usuario = Usuario.find(params[:id])
     end
+    
+    def editar
+        @usuario = Usuario.find(params[:id])
+    end
 
     def guardar
         datos_usuario = params.require(:usuario).permit(:nombre_usuario, :password, :password_confirmation)
@@ -19,9 +23,6 @@ class UsuariosController < ApplicationController
         end
     end
 
-    def editar
-        @usuario = Usuario.find(params[:id])
-    end
     
     def eliminar
 
