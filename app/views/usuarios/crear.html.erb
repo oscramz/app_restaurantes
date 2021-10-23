@@ -1,3 +1,9 @@
 <h1>Registro de nuevos usuarios</h1>
 
+<%= if flash[:eliminar] %>
+    <div class="alert alert-danger" role="alert">
+        <%= flash[:eliminar] %>
+    </div>
+<% end %>
+
 <%= render 'formulario', base_usuario: @usuario %>

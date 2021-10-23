@@ -36,8 +36,12 @@ class UsuariosController < ApplicationController
     
     def eliminar
         @usuario = Usuario.find(params[:id])
-        @usuario.destroy
-        
+        if @usuario.destroy
+            flash[:eliminar] = "Usuario #{@usuario.nombre_usuario} eliminado con éxito"
+        else
+            flash[:eliminar] = "EL usuario no pudo ser eliminado"
+        end
+        redirect_to action: nuevo_usuario_path
     end
 
 end
