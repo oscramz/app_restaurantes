@@ -3,3 +3,7 @@
 <%= @usuario.nombre_usuario %>
 
 <%= link_to "Editar", editar_usuario_path(@usuario), class: 'btn btn-warning' %>
+<%= link_to usuario_path(@usuario), method: :delete, class: 'btn btn-danger' do %>
+    <i class="fas fa-trash-alt"></i>
+    Eliminar cuenta
+<% end %>

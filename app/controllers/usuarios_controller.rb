@@ -35,7 +35,9 @@ class UsuariosController < ApplicationController
 
     
     def eliminar
-
+        @usuario = Usuario.find(params[:id])
+        @usuario.destroy
+        
     end
 
 end
