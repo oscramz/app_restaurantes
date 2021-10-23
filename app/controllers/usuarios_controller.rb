@@ -7,9 +7,19 @@ class UsuariosController < ApplicationController
     def mostrar
         @usuario = Usuario.find(params[:id])
     end
-    
+
     def editar
         @usuario = Usuario.find(params[:id])
+    end
+
+    def actualizar
+        @usuario = Usuario.find(params[:id])
+        datos_usuario = params.require(:usuario).permit(:nombre_usuario, :password, :password_confirmation)
+        if @usuario.update(datos_usuario)
+            redirect_to usuario_path(@usuario)
+        else
+            render :editar
+        end
     end
 
     def guardar

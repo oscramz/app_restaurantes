@@ -27,5 +27,6 @@ Rails.application.routes.draw do
   get    'usuarios/:id/editar',       to: 'usuarios#editar',       as: 'editar_usuario'
   
   post   'usuarios',                 to: 'usuarios#guardar',      as: 'usuarios'
+  patch  'usuarios/:id',             to: 'usuarios#actualizar'
 
 end
