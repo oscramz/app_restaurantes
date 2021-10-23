@@ -22,10 +22,10 @@ class PuntajesController < ApplicationController
 
     #post /puntaje
     def guardar
-        @tipo_puntaje = params.require(:puntaje).permit(:tipo)
-        nuevo_puntaje = TipoPuntaje.new(tipo_puntaje)
-        if @tipo_puntaje.save
-            redirect_to puntajes_path
+        nuevo_puntaje = params.require(:puntaje).permit(:tipo)
+        @puntaje = TipoPuntaje.new(nuevo_puntaje)
+        if @puntaje.save
+            redirect_to puntajes_path(@puntaje)
         else
             render :crear
         end
