@@ -1,6 +1,6 @@
 <h1>Lista los tipos de puntaje</h1>
 <br>
-<%= link_to 'Crear nuevo puntaje', nuevo_puntaje_path %>
+<%= link_to 'Crear nuevo puntaje', nuevo_tipo_puntaje_path %>
 <br>
 <table>
     <tr>
@@ -12,15 +12,15 @@
         <tr>
             <td> <%= puntaje.id %> </td>
             <td>
-                <%= link_to nuevo_puntaje_path(puntaje) do %>
+                <%= link_to nuevo_tipo_puntaje_path(puntaje) do %>
                     <%= puntaje.tipo %>
                 <% end %>
             </td>
             <td>
-                <%= link_to puntajes_path(puntaje), method: :delete, data: { confirm: '¿Está seguro que quiere eliminar el registro?' } do %>
+                <%= link_to tipo_puntaje_path(puntaje), method: :delete, data: { confirm: '¿Está seguro que quiere eliminar el registro?' } do %>
                     Borrar
                 <% end %>
-                <%= link_to editar_puntaje_path(puntaje) do %>
+                <%= link_to editar_tipo_puntaje_path(puntaje) do %>
                     Editar
                 <% end %>
             </td>

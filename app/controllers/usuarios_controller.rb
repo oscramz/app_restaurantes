@@ -39,9 +39,9 @@ class UsuariosController < ApplicationController
         if @usuario.destroy
             flash[:eliminar] = "Usuario #{@usuario.nombre_usuario} eliminado con éxito"
         else
-            flash[:eliminar] = "EL usuario no pudo ser eliminado"
+            flash[:eliminar] = "El usuario no pudo ser eliminado"
         end
-        redirect_to action: nuevo_usuario_path
+        redirect_to nuevo_usuario_path
     end
 
 end

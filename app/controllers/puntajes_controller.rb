@@ -22,10 +22,10 @@ class PuntajesController < ApplicationController
 
     #post /puntaje
     def guardar
-        nuevo_puntaje = params.require(:puntaje).permit(:tipo)
+        nuevo_puntaje = params.require(:tipo_puntaje).permit(:tipo)
         @puntaje = TipoPuntaje.new(nuevo_puntaje)
         if @puntaje.save
-            redirect_to puntajes_path(@puntaje)
+            redirect_to tipo_puntaje_path(@puntaje)
         else
             render :crear
         end
@@ -33,16 +33,16 @@ class PuntajesController < ApplicationController
 
     def actualizar
         @puntaje = TipoPuntaje.find(params[:id])
-        tipo_puntaje = params.require(:puntaje).permit(:tipo)
+        tipo_puntaje = params.require(:tipo_puntaje).permit(:tipo)
         @puntaje.tipo = tipo_puntaje[:tipo]
         @puntaje.save
-        redirect_to nuevo_puntaje_path
+        redirect_to tipo_puntaje_path
     end
 
     def eliminar
         tipo = TipoPuntaje.find(params[:id])
         tipo.destroy
-        redirect_to nuevo_puntaje_path
+        redirect_to tipos_puntajes_path
     end
 
 end
