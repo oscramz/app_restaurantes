@@ -10,6 +10,8 @@ ActiveSupport::Inflector.inflections(:en) do |inflect|
 #   inflect.uncountable %w( fish sheep )
     inflect.irregular 'tipo_comida', 'tipos_comidas'
     inflect.irregular 'tipo_puntaje', 'tipos_puntajes'
+    inflect.irregular 'invitacion', 'invitaciones'
+    inflect.irregular 'promocion', 'promociones'
 end
 
 # These inflection rules are supported but not enabled by default:
