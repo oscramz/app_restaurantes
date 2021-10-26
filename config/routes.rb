@@ -35,5 +35,6 @@ Rails.application.routes.draw do
   get    'restaurantes/nuevo',       to: 'restaurantes#crear',      as: 'nuevo_restaurante'
   get    'restaurantes/:id',         to: 'restaurantes#mostrar',    as: 'restaurante'
   
+  post   'restaurantes',             to: 'restaurantes#guardar'
 
 end

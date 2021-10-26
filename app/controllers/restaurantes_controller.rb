@@ -12,4 +12,8 @@ class RestaurantesController < ApplicationController
         
     end
 
+    def guardar
+        
+    end
+
 end
