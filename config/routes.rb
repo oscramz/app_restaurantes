@@ -31,4 +31,9 @@ Rails.application.routes.draw do
   patch  'usuarios/:id',             to: 'usuarios#actualizar'
   delete 'usuarios/:id',             to: 'usuarios#eliminar'
 
+  #rutas restaurantes
+  get    'restaurantes/nuevo',       to: 'restaurantes#crear',      as: 'nuevo_restaurante'
+  get    'restaurantes/:id',         to: 'restaurantes#mostrar',    as: 'restaurante'
+  
+
 end

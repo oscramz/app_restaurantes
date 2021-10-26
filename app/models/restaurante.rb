@@ -8,6 +8,9 @@ class Restaurante < ApplicationRecord
   has_many :promociones
   has_many :usuarios, through: :promociones
 
+  has_many :puntajes_restaurantes
+  has_many :puntajes, through: :puntajes_restaurantes
+
   validates(:nombre, presence: true)
   validates(:nombre, uniqueness: true)
 end

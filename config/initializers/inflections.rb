@@ -12,6 +12,8 @@ ActiveSupport::Inflector.inflections(:en) do |inflect|
     inflect.irregular 'tipo_puntaje', 'tipos_puntajes'
     inflect.irregular 'invitacion', 'invitaciones'
     inflect.irregular 'promocion', 'promociones'
+    inflect.irregular 'puntaje_plato', 'puntajes_platos'
+    inflect.irregular 'puntaje_restaurante', 'puntajes_restaurantes'
 end
 
 # These inflection rules are supported but not enabled by default:
