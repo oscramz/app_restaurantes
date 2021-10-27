@@ -1,5 +1,10 @@
 class RestaurantesController < ApplicationController
 
+    def listar
+        @todos_restaurantes = Restaurante.all
+        @tipos_comidas = TipoComida.all
+    end
+    
     def crear
         @restaurante = Restaurante.new
         @tipos_comidas = TipoComida.all
@@ -10,7 +15,7 @@ class RestaurantesController < ApplicationController
     end
 
     def editar
-        
+        @restaurante = Restaurante.find(params[:id])
     end
 
     def guardar

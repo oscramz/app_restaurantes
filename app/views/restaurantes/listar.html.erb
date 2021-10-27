@@ -1,0 +1,26 @@
+<h1>Listado de Restaurantes disponibles</h1>
+
+<table>
+    <tr>
+        <th>Restaurante</th>
+        <th>Especialidad</th>
+    </tr>
+
+<% @todos_restaurantes.each do |restaurante| %>
+    <tr>
+        <td> <%= link_to restaurantes_path(restaurante) do %>
+             <%= restaurante.nombre %>
+             <% end %>
+        </td>
+        <td>
+            <%= link_to restaurantes_path(restaurante), method: :delete, data: { confirm: '¿Está seguro que quiere eliminar este restaurante?' } do %>
+                Borrar
+            <% end %>
+            <%= link_to editar_restaurantes_path(restaurante) do %>
+                Editar
+            <% end %>
+        </td>
+    </tr>
+<% end %>
+
+</table>
