@@ -1,5 +1,6 @@
 class PuntajesController < ApplicationController
 
+    before_action :asignar_puntaje, only: [:mostrar, :editar, :actualizar, :eliminar]
     # Get lista tipos de puntaje
     def listar
         @tipos_puntajes = TipoPuntaje.all
@@ -12,37 +13,39 @@ class PuntajesController < ApplicationController
 
     #get /:id
     def mostrar
-        @puntaje = TipoPuntaje.find(params[:id])
+
     end
 
     #get /:id/editar
     def editar
-        @puntaje = TipoPuntaje.find(params[:id])
+
     end
 
     #post /puntaje
     def guardar
-        nuevo_puntaje = params.require(:tipo_puntaje).permit(:tipo)
-        @puntaje = TipoPuntaje.new(nuevo_puntaje)
-        if @puntaje.save
-            redirect_to tipo_puntaje_path(@puntaje)
-        else
-            render :crear
-        end
-    end
-
-    def actualizar
-        @puntaje = TipoPuntaje.find(params[:id])
-        tipo_puntaje = params.require(:tipo_puntaje).permit(:tipo)
-        @puntaje.tipo = tipo_puntaje[:tipo]
-        @puntaje.save
-        redirect_to tipo_puntaje_path
-    end
-
-    def eliminar
-        tipo = TipoPuntaje.find(params[:id])
-        tipo.destroy
+        nuevo_puntaje = TipoPuntaje.new(params_puntaje)
+        nuevo_puntaje.save
         redirect_to tipos_puntajes_path
     end
 
+    def actualizar
+        @puntaje.tipo = params_puntaje[:tipo]
+        @puntaje.save
+        redirect_to tipos_puntajes_path
+    end
+
+    def eliminar
+        @puntaje.destroy
+        redirect_to tipos_puntajes_path
+    end
+
+    private
+    def asignar_puntaje
+        @puntaje = TipoPuntaje.find(params[:id])
+    end
+
+    def params_puntaje
+        params.require(:tipo_puntaje).permit(:tipo)
+    end
+    
 end

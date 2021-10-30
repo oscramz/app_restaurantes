@@ -2,7 +2,7 @@
 <br>
 <%= link_to 'Crear nuevo puntaje', nuevo_tipo_puntaje_path %>
 <br>
-<table>
+<table class="table table-hover">
     <tr>
         <th>id</th>
         <th>tipo</th>
@@ -12,7 +12,7 @@
         <tr>
             <td> <%= puntaje.id %> </td>
             <td>
-                <%= link_to nuevo_tipo_puntaje_path(puntaje) do %>
+                <%= link_to tipo_puntaje_path(puntaje) do %>
                     <%= puntaje.tipo %>
                 <% end %>
             </td>

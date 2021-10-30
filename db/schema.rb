@@ -77,13 +77,13 @@ ActiveRecord::Schema.define(version: 2021_10_26_012945) do
     t.index ["tipo_comida_id"], name: "index_restaurantes_on_tipo_comida_id"
   end
 
-  create_table "tipos_comidas", id: :bigint, default: -> { "nextval('tipo_comidas_id_seq'::regclass)" }, force: :cascade do |t|
+  create_table "tipos_comidas", force: :cascade do |t|
     t.string "tipo"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "tipos_puntajes", id: :bigint, default: -> { "nextval('tipo_puntajes_id_seq'::regclass)" }, force: :cascade do |t|
+  create_table "tipos_puntajes", force: :cascade do |t|
     t.string "tipo"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

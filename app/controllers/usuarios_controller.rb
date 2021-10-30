@@ -1,5 +1,5 @@
 class UsuariosController < ApplicationController
-    before_action :listar_usuarios, only: [:mostrar, :editar, :actualizar, :eliminar]
+    before_action :asignar_usuario, only: [:mostrar, :editar, :actualizar, :eliminar]
 
     def crear
         @usuario = Usuario.new
@@ -24,7 +24,6 @@ class UsuariosController < ApplicationController
     end
 
     def guardar
-        params_usuario
         @usuario = Usuario.new(params_usuario)
         if @usuario.save
             #mensaje de confirmacion
@@ -50,7 +49,7 @@ class UsuariosController < ApplicationController
         params.require(:usuario).permit(:nombre_usuario, :password, :password_confirmation)
     end
 
-    def lista_usuarios
+    def asignar_usuario
         @usuario = Usuario.find(params[:id])
     end
 
