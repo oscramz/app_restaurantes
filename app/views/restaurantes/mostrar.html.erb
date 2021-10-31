@@ -1,0 +1,15 @@
+<h1>Detalles del Restaurante</h1>
+
+<table class="table">
+    <tr>
+        <th>Nombre</th>
+        <th>Tipo de comida</th>
+    </tr>
+
+    <tr>
+        <td><%= @restaurante.nombre %></td>
+        <td><%= @restaurante.tipo_comida.tipo %></td>
+        </tr>
+</table>
+<br>
+<%= link_to "Volver", restaurantes_path %>
