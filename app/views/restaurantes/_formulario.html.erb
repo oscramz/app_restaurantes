@@ -11,7 +11,7 @@
     </div>
     <div class="mb-3">
         <%= formulario.label :tipo_comida_id, class: 'form-label' %>
-        <%= formulario.select :tipo_comida_id, options_from_collection_for_select(tipos_comidas, :id, :tipo, base_restaurante.tipo_comida_id),
+        <%= formulario.select :tipo_comida_id, options_from_collection_for_select(base_tipos_comidas, :id, :tipo, base_restaurante.tipo_comida_id),
         { include_blank: 'Elige un tipo de comida' }, class: "form-select" %>
         <% if base_restaurante.errors[:tipo_comida_id].any? %>
             <div class="alert alert-danger" role="alert">
@@ -20,9 +20,5 @@
         <% end %>
     </div>
 
-    <%= formulario.submit %>
-<% end %>
-    <%= formulario.label :tipo %>
-    <%= formulario.text_field :tipo %>
     <%= formulario.submit %>
 <% end %>
